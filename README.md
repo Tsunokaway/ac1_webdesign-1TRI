@@ -1,6 +1,5 @@
 Questão entregue:
-
-"Crie uma página HTML com uma lista de tarefas (<ul>) onde o usuário pode:Adicionar uma
+"Crie uma página HTML com uma lista de tarefas ("<ul>") onde o usuário pode:Adicionar uma
 nova tarefa através de um campo de input.
 
 Marcar uma tarefa como concluída (riscando o texto).
