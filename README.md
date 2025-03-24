@@ -11,7 +11,6 @@ Requisitos:Um campo de input (<input>) para digitar a tarefa.
 
 Um botão "Adicionar" para incluir a tarefa na lista.
 
-
 Cada item da lista deve ter:
 
 Um botão "Concluir" para riscar o texto da tarefa.
