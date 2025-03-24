@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            margin: 10px;
+        }
+
+        .concluida {
+            color: green;
+            text-decoration: line-through;
+        }
+
+        button {
+            margin: 10px;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+        }
+
+        #adicionar {
+            color: #ffffff;
+            background-color: #355c7d;
+        }
+
+        .btnConcluir {
+            color: #ffffff;
+            background-color: #7e944e;
+        }
+
+        .btnRemover {
+            color: #ffffff;
+            background-color: #941f1f;
+        }
+
+        #listaTarefas {
+            list-style: none;
+        }
+
+        input {
+            margin-left: 10px;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            background-color: #e1e6e3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lista de tarefas</h1>
+    <input type="text" id="novaTarefa" placeholder="Digite uma nova tarefa">
+    <button id="adicionar">Adicionar</button>
+    <ul id="listaTarefas"></ul>
+
+    <script>
+        document.getElementById("adicionar").addEventListener("click", function () {
+            let inputTarefa = document.getElementById("novaTarefa");
+            let tarefaTexto = inputTarefa.value.trim();
+
+            if (tarefaTexto === "") return;
+
+            let lista = document.getElementById("listaTarefas");
+            let item = document.createElement("li");
+            item.textContent = tarefaTexto;
+
+            let btnConcluir = document.createElement("button")
+            btnConcluir.classList.toggle("btnConcluir");
+            btnConcluir.textContent = "Concluir";
+            btnConcluir.addEventListener("click", function () {
+                item.classList.toggle("concluida");
+            });
+
+            let btnRemover = document.createElement("button");
+            btnRemover.classList.toggle("btnRemover");
+            btnRemover.textContent = "Remover";
+            btnRemover.addEventListener("click", function () {
+                lista.removeChild(item);
+            });
+
+            item.appendChild(btnConcluir);
+            item.appendChild(btnRemover);
+            lista.appendChild(item);
+
+            inputTarefa.value = "";
+            inputTarefa.focus();
+        });
+    </script>
+</body>
+
+</html>
